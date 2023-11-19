@@ -1,0 +1,55 @@
+import { useState } from 'react'
+import './App.css'
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <>
+      <h1>Tela de cadasto</h1>
+      <div className="card">
+      <input
+        type="text"
+        id="message"
+        name="message"
+        placeholder="Nome completo"
+      />
+      <p></p>
+      <input 
+        type="text"
+        id="message"
+        name="message"
+        placeholder="Cpf "
+      />
+      <p></p>
+      <input
+        type="text"
+        id="message"
+        name="message"
+        placeholder="Gmail"
+      />
+      <p></p>
+      <input
+        type="text"
+        id="message"
+        name="message"
+        placeholder="Numero do telefone celular"
+      />
+      <p></p>
+      <input
+        type="text"
+        id="message"
+        name="message"
+        placeholder="Placa do veiculo"
+      />
+      <p></p>
+        <button onClick={() => setCount((count) => count + 1)}>
+          Cadastrar 
+        </button>
+        
+      </div>
+    </>
+  )
+}
+
+export default App
