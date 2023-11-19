@@ -1,0 +1,29 @@
+:root {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  
+  --azulclaroapp: #006DFF;
+  --azulescuroapp: #001633;
+  --azulchumboescuro: #213044;
+  --azulchumboclaro: #274C7D;
+  --cinzachumbo: #2E2E2E;
+  --brancopuro: #FFFFFF;
+  --pretopuro: #000000;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
