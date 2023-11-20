@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Login.css';
+import logoSVGneon from '../../assets/teste.svg';
+import { Link } from 'react-router-dom';
+
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -17,6 +21,8 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      <img src={logoSVGneon} alt="LogoNeon"></img>
+      <span className="parkhub">ParkHub</span>
       <h2>Login</h2>
       <form>
         <input
@@ -26,7 +32,7 @@ const Login = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <p></p>
+        <br></br>
 
         <input
           className="form-input"
@@ -46,6 +52,9 @@ const Login = () => {
           </button>
         </div>
       </form>
+      <p className="cadastro">
+        Ainda não possui cadastro? <Link to="/register">Cadastrar-se</Link>
+      </p>
     </div>
   );
 };
