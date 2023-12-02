@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "estabelecimento": "Safe Park Estacionamento",
+    "localizacao": "R. Seis de Janeiro, 112 - Centro, Criciúma - SC, 88801-055",
+    "horario": "6:00 - 23:00",
+    "contato": "(48) 3333-3333",
+    "valorhora": "10,00"
+  },
+  {
+    "id": 2,
+    "estabelecimento": "Estacionamento Rotativo Santa Rosa",
+    "localizacao": "R. Tiradentes, 28 - Centro, Criciúma - SC, 88801-080",
+    "horario": "6:00 - 23:00",
+    "contato": "(48) 3413-8898",
+    "valorhora": "8,00"
+  },
+  {
+    "id": 3,
+    "estabelecimento": "RTC Estacionamento Rotativo",
+    "localizacao": "R. Cel. Marcos Rovaris, 108 - Centro, Criciúma - SC, 88801-100",
+    "horario": "7:00 - 22:00",
+    "contato": "(48) 99984-6410",
+    "valorhora": "12,00"
+  },
+  {
+    "id": 4,
+    "estabelecimento": "MetroPark",
+    "localizacao": "R. Hercílio Luz - Centro, Criciúma - SC, 88801-300",
+    "horario": "8:00 - 20:00",
+    "contato": "(48) 3413-8898",
+    "valorhora": "9,00"
+  },
+  {
+    "id": 5,
+    "estabelecimento": "MAX Estacionamento",
+    "localizacao": "R. Dep Antonio, G Sobrinho, 26 - Cruzeiro do Sul, Criciúma - SC, 88811-130",
+    "horario": "7:30 - 21:30",
+    "contato": "(48) 99917-3944",
+    "valorhora": "11,00"
+  }
+]
