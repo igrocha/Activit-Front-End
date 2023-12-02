@@ -1,21 +1,26 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Login.css';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import logoSVGneon from '../../assets/teste.svg';
-import { Link } from 'react-router-dom';
-
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [loginType, setLoginType] = useState('user');
   const navigate = useNavigate();
 
   function handleLogin() {
     if (username === '' || password === '') {
       alert('Por favor, preencha todos os campos.');
     } else {
-      console.log(`Username: ${username}, Password: ${password}`);
-      navigate('/home'); // corrigir o nome da próxima página
+      console.log(
+        `Username: ${username}, Password: ${password}, Type: ${loginType}`
+      );
+
+      if (loginType === 'user') {
+        navigate('/vaga');
+      } else if (loginType === 'company') {
+        navigate('/'); // atualizar rota
+      }
     }
   }
 
@@ -24,6 +29,20 @@ const Login = () => {
       <img src={logoSVGneon} alt="LogoNeon"></img>
       <span className="parkhub">ParkHub</span>
       <h2>Login</h2>
+
+      <div>
+        <label>
+          Tipo de Login:
+          <select
+            value={loginType}
+            onChange={(e) => setLoginType(e.target.value)}
+          >
+            <option value="user">Usuário</option>
+            <option value="company">Empresa</option>
+          </select>
+        </label>
+      </div>
+
       <form>
         <input
           className="form-input"
@@ -32,7 +51,7 @@ const Login = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <br></br>
+        <br />
 
         <input
           className="form-input"
