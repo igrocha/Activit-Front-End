@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "estabelecimento": "Safe Park Estacionamento",
+    "localizacao": "R. Seis de Janeiro, 112 - Centro, Criciúma - SC, 88801-055",
+    "horario": "6:00 - 23:00",
+    "contato": "(48) 3333-3333",
+    "valorhora": "10,00",
+    "valormensal": "200,00"
+  },
+  {
+    "id": 2,
+    "estabelecimento": "Estacionamento Rotativo Santa Rosa",
+    "localizacao": "R. Tiradentes, 28 - Centro, Criciúma - SC, 88801-080",
+    "horario": "6:00 - 23:00",
+    "contato": "(48) 3413-8898",
+    "valorhora": "8,00",
+    "valormensal": "250,00"
+  }
+]
