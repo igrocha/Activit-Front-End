@@ -3,18 +3,15 @@ import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
-const TopBarLanding = () => {
 
-    const headerneonstyle = {
-        WebkitBoxShadow: '0px 0px 15px 0px var(--azulchumboclaro)',
-    };
+const TopBarLanding = () => {
 
     const buttonneonstyles = {
         WebkitBoxShadow: '0px 0px 5px 0px var(--azulclaroapp)',
     };
 
     return (
-        <div style={{ margin: '10px', padding: '8px', display: 'flex', alignItems: 'center', background: 'linear-gradient(to right, var(--azulclaroapp), var(--azulescuroapp))', borderRadius: '20px', ...headerneonstyle}}>
+        <div style={{position:'absolute',width: '100%', padding: '8px', display: 'flex', alignItems: 'center',borderRadius: '20px',backgroundColor:'transparent'}}>
             <div style={{ display: 'flex', alignItems: 'center'}}>
                 <Link to="/">
                     <img width="50" height="50" src="..\src\assets\Logo.svg" alt="Logo da Empresa" />
@@ -35,7 +32,7 @@ const TopBarLanding = () => {
                     <Button component={Link} to="/Register" style={{ color: 'var(--azulclaroapp)', fontSize: '13px'}}>
                         criar conta
                     </Button>
-                    <Button component={Link} to="/Login" style={{ backgroundColor: 'var(--pretopuro)', color: 'var(--brancopuro)', borderRadius: '8px', ...buttonneonstyles}}>
+                    <Button className='entrar' component={Link} to="/Login" style={{ backgroundColor: 'var(--pretopuro)', color: 'var(--brancopuro)', borderRadius: '8px', ...buttonneonstyles}}>
                         Entrar
                     </Button>
                 </Stack>

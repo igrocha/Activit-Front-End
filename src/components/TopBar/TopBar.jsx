@@ -1,4 +1,5 @@
-// TopBar.jsx
+// Esta NAVBAR é somente para pós login
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
@@ -9,7 +10,6 @@ import SettingsIcon from '@mui/icons-material/Settings';
 const TopBar = ({ usuario }) => {
     const [showMessage, setShowMessage] = useState(false);
 
-    // Configurando a animação
     const props = useSpring({
         opacity: 1,
         transform: showMessage ? 'rotateY(-360deg)' : 'rotateY(0deg)',
@@ -17,7 +17,6 @@ const TopBar = ({ usuario }) => {
     });
 
     useEffect(() => {
-        // Lógica para exibir a mensagem após 1 segundo
         const timeoutId = setTimeout(() => {
             setShowMessage(true);
         }, 1000);
