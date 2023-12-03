@@ -17,7 +17,7 @@ export default function DetalheVaga() {
         borderRadius: '30px',
         maxWidth: 500,
         margin: 'auto',
-        marginBottom: 2, // Espaçamento inferior entre os cards
+        marginBottom: 2,
         ...browserSpecificStyles,
     };
 
@@ -33,7 +33,6 @@ export default function DetalheVaga() {
                         <p>Contato: {vaga.contato}</p>
                         <p>Valores:</p>
                         <p>1h - {vaga.valorhora}</p>
-                        <p>Mensal - {vaga.valormensal}</p>
                         <div style={{ marginTop: 'auto', textAlign: 'right' }}>
                             <Link to={`/vaga/${vaga.id}`}>
                                 <Button style={{ backgroundColor: 'var(--azulclaroapp)', borderRadius: '10px' }} variant="contained" >Reservar</Button>

@@ -27,7 +27,7 @@ const Login = () => {
   };
 
   const parkhubStyle = {
-    fontSize: '90px',
+    fontSize: '50px',
     color: 'var(--brancopuro)',
     padding: '10px',
     display: 'flex',
@@ -69,6 +69,7 @@ const Login = () => {
   };
 
   const cadastroStyle = {
+    color: 'white',
     fontSize: '20px',
   };
 
@@ -90,7 +91,7 @@ const Login = () => {
 
   return (
     <div style={containerStyle}>
-      <img src={logoSVGneon} style={logoStyle} />
+      <img width="150" height="150" src={logoSVGneon} style={logoStyle} />
       <span style={parkhubStyle}>ParkHub</span>
 
       <div>
@@ -136,7 +137,7 @@ const Login = () => {
         </div>
       </form>
       <p style={cadastroStyle}>
-        Ainda não possui cadastro? <Link to="/register">Cadastrar-se</Link>
+        Ainda não possuí cadastro? <Link to="/register">Cadastrar-se</Link>
       </p>
     </div>
   );
