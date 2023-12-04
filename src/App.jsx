@@ -10,8 +10,6 @@ import TopBar from './components/TopBar/TopBar.jsx';
 import TopBarLanding from './pages/LandingPage/TopBarLanding.jsx';
 import ErrorPage from './pages/Error/Errorpage.jsx';
 
-
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -31,7 +29,7 @@ const router = createBrowserRouter([
     element: <RegisterPage />,
   },
   {
-    path: '/vagas',
+    path: '/vagas/:username',
     element: (
       <>
         <TopBar />

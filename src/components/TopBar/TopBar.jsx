@@ -1,14 +1,18 @@
 // Esta NAVBAR é somente para pós login
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
+import { useParams } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import SettingsIcon from '@mui/icons-material/Settings';
 
-const TopBar = ({ username }) => {
+
+const TopBar = () => {
+    const { username } = useParams();
     const [showMessage, setShowMessage] = useState(false);
+    
 
     const props = useSpring({
         opacity: 1,
@@ -30,6 +34,9 @@ const TopBar = ({ username }) => {
 
     const buttonneonstyles = {
         WebkitBoxShadow: '0px 0px 5px 0px var(--azulclaroapp)',
+        backgroundColor: 'var(--pretopuro)',
+        color: 'var(--brancopuro)',
+        borderRadius: '8px',
     };
 
 
@@ -59,14 +66,14 @@ const TopBar = ({ username }) => {
                 <Stack direction="row" spacing={3}>
                     <Button
                         component={Link}
-                        to="/Vagas"
-                        style={{ backgroundColor: 'var(--pretopuro)', color: 'var(--brancopuro)', borderRadius: '8px', ...buttonneonstyles }}>
+                        to= {`/vagas/${username}`}
+                        style={buttonneonstyles}>
                         Estacionamentos
                     </Button>
                     <Button
                         component={Link}
                         to="/gerenciar-conta"
-                        style={{ backgroundColor: 'var(--pretopuro)', color: 'var(--brancopuro)', borderRadius: '8px', ...buttonneonstyles }}
+                        style={buttonneonstyles}
                     >
                         <SettingsIcon style={{ color: 'white', marginRight: '10px' }} /> CONTA
                     </Button>

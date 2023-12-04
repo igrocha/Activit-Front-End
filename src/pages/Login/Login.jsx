@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logoSVGneon from '../../assets/teste.svg';
-import Select from '@mui/material/Select';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loginType, setLoginType] = useState('user');
   const navigate = useNavigate();
+
 
   const containerStyle = {
     margin: '10px',
@@ -92,19 +92,21 @@ const Login = () => {
         `Username: ${username}, Password: ${password}, Type: ${loginType}`
       );
 
+      // Atualizar para usar o contexto para fornecer informações do usuário
       if (loginType === 'user') {
-        navigate('/vagas', { state: { username } });
+        navigate(`/vagas/${username}`);
       } else if (loginType === 'company') {
-        navigate('/'); // Gustavo atualizar rota
+        navigate('/*'); 
       }
     }
   }
 
   return (
     <div style={containerStyle}>
+      <UserContext.Provider value={{ username, loginType }}>
       <img width="150" height="150" src={logoSVGneon} />
       <span style={parkhubStyle}>ParkHub</span>
-      <div style={{ backgroundColor: 'transparentr', borderRadius: '10px', padding: '6px' }}>
+      <div style={{ backgroundColor: 'transparent', borderRadius: '10px', padding: '6px' }}>
         <p style={{textAlign:'center'}}>Método de Entrada</p>
         <label style={labelStyle}>
           <select
@@ -141,14 +143,16 @@ const Login = () => {
           <p style={cadastroStyle}>
             Sem cadastro? <Link to="/register" style={{ color: 'Highlight', textDecoration: 0, }}>Cadastrar-se</Link>
           </p>
-          <button to="/vagas" type="button" onClick={handleLogin} style={buttonStyle}>
+          <button type="button" onClick={handleLogin} style={buttonStyle}>
             Entrar
           </button>
         </div>
       </form>
-
+      </UserContext.Provider>
     </div>
   );
 };
 
 export default Login;
+
+export const UserContext = React.createContext();
