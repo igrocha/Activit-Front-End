@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import SettingsIcon from '@mui/icons-material/Settings';
 
-const TopBar = ({ usuario }) => {
+const TopBar = ({ username }) => {
     const [showMessage, setShowMessage] = useState(false);
 
     const props = useSpring({
@@ -20,7 +20,7 @@ const TopBar = ({ usuario }) => {
         const timeoutId = setTimeout(() => {
             setShowMessage(true);
         }, 1000);
-    
+
         return () => clearTimeout(timeoutId);
     }, []);
 
@@ -31,6 +31,7 @@ const TopBar = ({ usuario }) => {
     const buttonneonstyles = {
         WebkitBoxShadow: '0px 0px 5px 0px var(--azulclaroapp)',
     };
+
 
     return (
         <div
@@ -50,7 +51,7 @@ const TopBar = ({ usuario }) => {
                 </Link>
                 <animated.span style={{ ...props, color: 'var(--brancopuro)', fontSize: '30px', marginLeft: '10px' }}>
                     {showMessage
-                        ? `Olá ${usuario}, bem-vindo ao ParkHub`
+                        ? `Olá ${username}, bem-vindo ao ParkHub`
                         : 'ParkHub'}
                 </animated.span>
             </div>

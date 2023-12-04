@@ -10,8 +10,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  height: 100%;
-  
+    
   --azulclaroapp: #006DFF;
   --azulescuroapp: #001633;
   --azulchumboescuro: #213044;
@@ -21,6 +20,9 @@
   --pretopuro: #000000;
 }
 
+::placeholder{
+  color: var(--brancopuro);
+}
 
 
 * {
