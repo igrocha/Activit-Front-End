@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useReservaContext } from '../context/ReservaContext';
+import { useReservaContext } from '../../context/ReservaContext';
 
 const ListarReservasFeitas = ({ reservas, ...props }) => {
   const { listarReservas, editarReserva, excluirReserva } = useReservaContext();
