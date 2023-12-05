@@ -10,6 +10,8 @@ import TopBar from './components/TopBar/TopBar.jsx';
 import TopBarLanding from './pages/LandingPage/TopBarLanding.jsx';
 import ErrorPage from './pages/Error/ErrorPage'
 import ReservaEstacionamento from './pages/Reserva/ReservaEstacionamento'
+import ListarReservasFeitas from './pages/Reserva/ListarReservasFeitas'
+import { ReservaProvider } from './context/ReservaContext';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +58,10 @@ const router = createBrowserRouter([
       </>
     ),
   },
+    {
+      path: '/ListarReservasFeitas',
+      element: <ListarReservasFeitas />,
+    },
   {
     path: '/*',
     element: (
@@ -67,5 +73,9 @@ const router = createBrowserRouter([
   
 ]);
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+  <ReservaProvider>
+      <RouterProvider router={router} />
+    </ReservaProvider>
+  )
 }
