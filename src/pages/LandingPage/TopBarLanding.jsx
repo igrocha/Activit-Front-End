@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import ReservaEstacionamento from '../Reserva/ReservaEstacionamento'
 
 
 const TopBarLanding = () => {
@@ -31,6 +32,9 @@ const TopBarLanding = () => {
                     </Button>
                     <Button component={Link} to="/Register" style={{ color: 'var(--azulclaroapp)', fontSize: '13px'}}>
                         criar conta
+                    </Button>
+                    <Button component={Link} to="/ReservaEstacionamento" style={{ color: 'var(--azulclaroapp)', fontSize: '13px'}}>
+                        Reservas
                     </Button>
                     <Button className='entrar' component={Link} to="/Login" style={{ backgroundColor: 'var(--pretopuro)', color: 'var(--brancopuro)', borderRadius: '8px', ...buttonneonstyles}}>
                         Entrar

@@ -8,7 +8,8 @@ import RegisterPage from './pages/Register/RegisterPage.jsx';
 import Detalhevagas from './pages/Home/Estacionamentos.jsx';
 import TopBar from './components/TopBar/TopBar.jsx';
 import TopBarLanding from './pages/LandingPage/TopBarLanding.jsx';
-import ErrorPage from './pages/Error/Errorpage.jsx';
+import ErrorPage from './pages/Error/ErrorPage'
+import ReservaEstacionamento from './pages/Reserva/ReservaEstacionamento'
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,15 @@ const router = createBrowserRouter([
       <>
         <TopBarLanding />
         <EstacionamentoLanding />
+      </>
+    ),
+  },
+  {
+    path: '/ReservaEstacionamento',
+    element: (
+      <>
+        <TopBarLanding />
+        <ReservaEstacionamento />
       </>
     ),
   },
