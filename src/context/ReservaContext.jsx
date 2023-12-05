@@ -13,8 +13,29 @@ export const ReservaProvider = ({ children }) => {
     setListaReservas([...listarReservas, novaReserva]);
   };
 
+  const editarReserva = (id, novosDados) => {
+    const reservasAtualizadas = listarReservas.map((reserva) =>
+      reserva.id === id ? { ...reserva, ...novosDados } : reserva
+    );
+    setListaReservas(reservasAtualizadas);
+  };
+
+  const excluirReserva = (id) => {
+    const reservasAtualizadas = listarReservas.filter(
+      (reserva) => reserva.id !== id
+    );
+    setListaReservas(reservasAtualizadas);
+  };
+
   return (
-    <ReservaContext.Provider value={{ listarReservas, adicionarReserva }}>
+    <ReservaContext.Provider
+      value={{
+        listarReservas,
+        adicionarReserva,
+        editarReserva,
+        excluirReserva,
+      }}
+    >
       {children}
     </ReservaContext.Provider>
   );
