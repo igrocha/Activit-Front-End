@@ -52,12 +52,13 @@ const ListarReservasFeitas = ({ reservas, ...props }) => {
     };
   
     return (
-      <div className="p-2 w-full h-full overflow-auto max-h-[500px] shadow-2xl shadow-black">
-        <h2 className="text-2xl font-bold mb-4">Reservas Feitas:</h2>
+      <div style={{ marginLeft:'10px', marginTop:'10px', width:'350px', alignItems:'center'}}>
+        <h2 className="text-2xl font-bold mb-4" style={{textAlign:'center'}}>Reservas Feitas:</h2>
         {listarReservas.map((reserva) => (
           <div
             key={reserva.id}
             className="mb-6 p-4 border border-gray-300 rounded"
+            style={{WebkitBoxShadow: '0px 0px 5px 0px var(--azulclaroapp)'}}
           >
             <p className="mb-2 block text-base font-medium">
               Nome do Cliente: {reserva.nome}
@@ -96,6 +97,7 @@ const ListarReservasFeitas = ({ reservas, ...props }) => {
             <button
               className="bg-[#0335fc] hover:bg-green-700 mx-4 text-white py-2 px-4 rounded mt-4"
               onClick={() => handleEditar(reserva.id)}
+              style={{marginLeft:'100px'}}
             >
               Editar
             </button>

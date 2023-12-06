@@ -96,7 +96,7 @@ const Login = () => {
       if (loginType === 'user') {
         navigate(`/vagas/${username}`);
       } else if (loginType === 'company') {
-        navigate('/*'); 
+        navigate('/ListarReservasFeitas'); 
       }
     }
   }

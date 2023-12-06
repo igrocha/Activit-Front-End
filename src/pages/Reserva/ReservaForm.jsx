@@ -66,7 +66,7 @@ const ReservaForm = ({ reserva, onChange }) => {
   };
 
   return (
-    <div className="p-2">
+    <div className="p-2" style={{border: '10px solid var(--azulclaroapp)'}}>
       <form>
         <div class="mb-3">
           <div className="mb-4 rounded bg-gray-200 p-2 shadow">

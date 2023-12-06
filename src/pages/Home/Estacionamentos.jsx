@@ -32,7 +32,7 @@ export default function DetalheVaga() {
 
     return (
         <div>
-            <h1 style={{ maxWidth: 500, margin: 'auto', marginBottom: 10, borderRadius: '10px', textAlign: 'center' }}>Estacionamentos Disponiveis</h1>
+            <h1 style={{ color:'var(--azulescuroapp)', maxWidth: 500, margin: 'auto', marginBottom: 10, borderRadius: '10px', textAlign: 'center', fontSize:'30px', fontWeight:'bold' }}>Estacionamentos Disponiveis</h1>
             {items.map((vaga) => (
                 <Card key={vaga.id} sx={cardStyle}>
                     <CardContent>
