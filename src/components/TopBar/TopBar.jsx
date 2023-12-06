@@ -53,7 +53,7 @@ const TopBar = () => {
             }}
         >
             <div style={{ display: 'flex', alignItems: 'center' }}>
-                <Link to="/vagas">
+                <Link to= {`/vagas/${username}`}>
                     <img width="50" height="50" src="..\src\assets\Logo.svg" alt="Logo da Empresa" />
                 </Link>
                 <animated.span style={{ ...props, color: 'var(--brancopuro)', fontSize: '30px', marginLeft: '10px' }}>
@@ -70,13 +70,10 @@ const TopBar = () => {
                         style={buttonneonstyles}>
                         Estacionamentos
                     </Button>
-                    <Button
-                        component={Link}
-                        to="/gerenciar-conta"
-                        style={buttonneonstyles}
-                    >
-                        <SettingsIcon style={{ color: 'white', marginRight: '10px' }} /> CONTA
-                    </Button>
+                    <Button component={Link} to="/profile" style={buttonneonstyles}>
+            <SettingsIcon style={{ color: 'white', marginRight: '10px' }} />{' '}
+            CONTA
+          </Button>
                 </Stack>
             </div>
         </div>

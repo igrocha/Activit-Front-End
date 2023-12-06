@@ -44,7 +44,7 @@ export default function DetalheVaga() {
                             <div style={{backgroundColor:'White', borderRadius:'10px', padding:'5px', alignItems:'center', textAlign:'center', fontWeight: 'bold'}}>
                                 <p style={{color:'var(--azulclaroapp)'}}>R${vaga.valorhora}/Hr</p>
                             </div>
-                            <Link to={`/vaga/${vaga.id}`}>
+                            <Link to={"/ReservaEstacionamento"}>
                                 <Button style={buttonneonstyles} variant="contained">Reservar</Button>
                             </Link>
                         </div>

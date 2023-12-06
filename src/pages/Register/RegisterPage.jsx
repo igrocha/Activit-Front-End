@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import logoSVGneon from '../../assets/teste.svg';
 
-function Register() {
+function Register({ onRegister }) {
 
   const containerStyle = {
     margin: '10px',
@@ -95,10 +95,16 @@ function Register() {
     ) {
       alert('Por favor, preencha todos os campos.');
     } else {
-      console.log(
-        `Name: ${name}, Username: ${username}, ${loginType === 'user' ? 'CPF' : 'CNPJ'
-        }: ${loginType === 'user' ? CPF : CNPJ}, Email: ${email}, Password: ${password}`
-      );
+      const userData = {
+        name,
+        username,
+        CPF,
+        email,
+        password,
+        loginType,
+        CNPJ,
+      };
+      onRegister(userData);
 
       if (loginType === 'user' || loginType === 'company') {
         navigate('/login');
