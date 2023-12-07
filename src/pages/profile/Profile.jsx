@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function ProfilePage({ userData, onDeleteData }) {
   const [editing, setEditing] = useState(false);
   const [editedData, setEditedData] = useState({ ...userData });
+  const navigate = useNavigate();
 
   const handleEditToggle = () => {
     setEditing(!editing);
@@ -20,6 +22,12 @@ function ProfilePage({ userData, onDeleteData }) {
     localStorage.setItem('userData', JSON.stringify(editedData));
     setEditing(false);
     userData(editedData);
+  };
+
+  const handleDeleteAndNavigate = () => {
+    onDeleteData();
+    // Depois da exclusão retorna para a pagina de login
+    navigate('/login');
   };
 
   const containerStyle = {
@@ -109,7 +117,7 @@ function ProfilePage({ userData, onDeleteData }) {
         </div>
       )}
       <div>
-      <button className="bg-[#006DFF] rounded-lg hover:bg-red-700 mx-4 text-white py-2 px-4 rounded mt-4" onClick={onDeleteData}>Excluir Dados</button>
+      <button className="bg-[#006DFF] rounded-lg hover:bg-red-700 mx-4 text-white py-2 px-4 rounded mt-4" onClick={handleDeleteAndNavigate}>Excluir Dados</button>
       <button className="bg-[#006DFF] rounded-lg hover:bg-gray-700 mx-4 text-white py-2 px-4 rounded mt-4" onClick={handleEditToggle}>
         {editing ? 'Cancelar' : 'Editar'}
       </button>

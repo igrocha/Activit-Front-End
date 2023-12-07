@@ -92,7 +92,6 @@ const Login = () => {
         `Username: ${username}, Password: ${password}, Type: ${loginType}`
       );
 
-      // Atualizar para usar o contexto para fornecer informações do usuário
       if (loginType === 'user') {
         navigate(`/vagas/${username}`);
       } else if (loginType === 'company') {

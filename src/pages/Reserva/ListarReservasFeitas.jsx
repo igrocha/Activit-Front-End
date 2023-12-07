@@ -20,7 +20,7 @@ const ListarReservasFeitas = ({ reservas, ...props }) => {
       // Converte a diferença para horas
       const diferencaEmHoras = diferencaEmMilissegundos / (1000 * 60 * 60);
   
-      // Calcula o valor total multiplicando as horas pela taxa (8 pré-definida)
+      // Calcula o valor total multiplicando as horas (8 pré-definida)
       const valorTotal = diferencaEmHoras * 8;
   
       // Formata o valor total para Reais
