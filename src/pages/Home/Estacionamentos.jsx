@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import vagasData from "./Empresas.json";
 import Card from "@mui/material/Card";
@@ -31,6 +31,10 @@ export default function DetalheVaga() {
       "linear-gradient(to right, var(--azulclaroapp), var(--azulescuroapp))",
   };
 
+  const handleReservarClick = (vaga) => {
+    localStorage.setItem("vagaSelecionada", JSON.stringify(vaga));
+  };
+
   return (
     <div>
       <h1
@@ -54,6 +58,7 @@ export default function DetalheVaga() {
             <h5>{vaga.localizacao}</h5>
             <p>Horário de funcionamento: {vaga.horario}</p>
             <p>Contato: {vaga.contato}</p>
+            <p>Quantidade de vagas: {vaga.vagasdisponiveis}</p>
             <div
               style={{
                 marginTop: "10px",
@@ -77,7 +82,11 @@ export default function DetalheVaga() {
                 </p>
               </div>
               <Link to={"/ReservaEstacionamento"}>
-                <Button style={buttonneonstyles} variant="contained">
+                <Button
+                  style={buttonneonstyles}
+                  variant="contained"
+                  onClick={() => handleReservarClick(vaga)}
+                >
                   Reservar
                 </Button>
               </Link>

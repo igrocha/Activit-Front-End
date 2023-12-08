@@ -83,7 +83,11 @@ const App = () => {
     },
     {
       path: '/ListarReservasFeitas',
-      element: <ListarReservasFeitas />,
+      element: 
+        <>
+          <TopBar />
+          <ListarReservasFeitas />,
+        </>
     },
     {
       path: '/*',
