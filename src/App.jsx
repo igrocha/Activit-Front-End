@@ -7,6 +7,7 @@ import Login from './pages/Login/Login.jsx';
 import RegisterPage from './pages/Register/RegisterPage.jsx';
 import Detalhevagas from './pages/Home/Estacionamentos.jsx';
 import TopBar from './components/TopBar/TopBar.jsx';
+import TopBarComp from './components/TopBar/TopBarComp.jsx';
 import TopBarLanding from './pages/LandingPage/TopBarLanding.jsx';
 import ErrorPage from './pages/Error/ErrorPage';
 import ReservaEstacionamento from './pages/Reserva/ReservaEstacionamento';
@@ -85,8 +86,8 @@ const App = () => {
       path: '/ListarReservasFeitas',
       element: 
         <>
-          <TopBar />
-          <ListarReservasFeitas />,
+          <TopBarComp />
+          <ListarReservasFeitas />
         </>
     },
     {

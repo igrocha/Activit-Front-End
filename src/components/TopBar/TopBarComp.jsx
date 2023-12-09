@@ -64,12 +64,6 @@ const TopBar = () => {
             </div>
             <div style={{ marginLeft: 'auto', display: 'flex', marginRight: '20px' }}>
                 <Stack direction="row" spacing={3}>
-                    <Button
-                        component={Link}
-                        to={`/vagas/${username}`}
-                        style={buttonneonstyles}>
-                        Estacionamentos
-                    </Button>
                     <Button component={Link} to="/profile" style={buttonneonstyles}>
                         <SettingsIcon style={{ color: 'white', marginRight: '10px' }} />{' '}
                         CONTA
