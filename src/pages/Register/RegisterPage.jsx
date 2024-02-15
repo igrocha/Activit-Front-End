@@ -5,14 +5,13 @@ import logoSVGneon from '../../assets/teste.svg';
 function Register({ onRegister }) {
 
   const containerStyle = {
-    margin: '10px',
+    margin: '9px',
+    minHeight: '98vh',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '20px',
     color: 'white',
-    minHeight: '98vh',
     borderRadius: '20px',
     boxShadow: '0px 0px 7px 1px var(--azulclaroapp)',
     background: 'linear-gradient(to right, var(--azulclaroapp), var(--azulescuroapp))'
@@ -48,19 +47,43 @@ function Register({ onRegister }) {
     backgroundColor: 'var(--azulescuroapp)',
   };
 
-  const buttonStyle = {
-    fontSize: '22px',
+  //BOTÃO DE CADASTRAR ESTILIZADO
+
+  const [buttonStyle, setButtonStyle] = useState({
+    fontSize: '20px',
     display: 'flex',
     justifyContent: 'center',
     margin: 'auto',
     padding: '10px',
     color: 'white',
-    backgroundColor: 'transparent',
-    width: '100px',
-    border: '0',
+    backgroundColor: 'var(--azulescuroapp)',
     borderRadius: '50px',
-    boxShadow: '0px 0px 7px 1px rgba(0, 111, 255, 1)',
+    boxShadow: '0px 0px 7px 1px var(--azulclaroapp)',
+    cursor: 'pointer',
+    transition: 'transform 0.3s ease, background-color 1s ease, border 3s ease', 
+  });
+
+  const handleMouseEnter = () => {
+    setButtonStyle(prevStyle => ({
+      ...prevStyle,
+      transform: 'scale(1.1)',
+      background: 'linear-gradient(to right, var(--azulclaroapp), var(--azulescuroapp))',
+      border: 'solid 1px white',
+      boxShadow: '0px 0px 10px 3px var(--azulclaroapp)',
+    }));
   };
+  const handleMouseLeave = () => {
+    setButtonStyle(prevStyle => ({
+      ...prevStyle,
+      transform: 'scale(1)',
+      background: 'var(--azulescuroapp)',
+      boxShadow: '0px 0px 7px 1px var(--azulclaroapp)',
+      color: 'white',
+      border: 'none',
+    }));
+  };  
+
+  //...fim do botão cadastrar estilizado
 
   const formInputStyle = {
     width: '100%',
@@ -81,6 +104,7 @@ function Register({ onRegister }) {
   const [password2, setPassword2] = useState('');
   const [loginType, setLoginType] = useState('user');
   const [CNPJ, setCNPJ] = useState(''); // Novo estado para armazenar CNPJ
+  
   const navigate = useNavigate();
   
 
@@ -117,7 +141,7 @@ function Register({ onRegister }) {
       <div style={containerStyle}>
         <img width="150" height="150" src={logoSVGneon} />
         <span style={parkhubStyle}>ParkHub</span>
-        <div style={{ backgroundColor: 'black', padding: '20px', borderRadius: '20px', boxShadow: '0px 0px 7px 1px var(--azulclaroapp)' }}>
+        <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '30px', borderRadius: '20px', boxShadow: '0px 0px 7px 1px var(--azulclaroapp)' }}>
           <div style={{ backgroundColor: 'transparent', borderRadius: '10px', padding: '6px' }}>
             <p style={{ textAlign: 'center' }}>Método de Entrada</p>
             <label style={labelStyle}>
@@ -195,7 +219,8 @@ function Register({ onRegister }) {
             </div>
             <div>
             </div>
-            <button to='./login' onClick={handleregister} style={buttonStyle}>
+            <button type= 'button' to='./login' onClick={handleregister} style={buttonStyle} onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}>
               Cadastrar
             </button>
           </div>
